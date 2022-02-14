@@ -1,0 +1,13 @@
+﻿@model About
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="col-5">
+        <input class="form-control mb-3" asp-for="Title" />
+        <input class="form-control mb-3" asp-for="Description" />
+        <input class="form-control mb-3" multiple type="file" name="Image"/>
+        <input class="form-control mb-3" asp-for="PublishDate" />
+        <input class="form-control mb-3" type="hidden" asp-for="ID" />
+        <input class="form-control mb-3" type="submit" value="Post"/>
+    </div>
+</form>

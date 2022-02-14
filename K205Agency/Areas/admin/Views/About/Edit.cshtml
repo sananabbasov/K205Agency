@@ -1,0 +1,14 @@
+﻿@model About
+
+
+<form method="post">
+    <div class="col-5">
+        <input class="form-control mb-3" asp-for="Title" />
+        <input class="form-control mb-3" asp-for="Description" />
+        <input class="form-control mb-3" asp-for="PhotoURL" />
+        <input class="form-control mb-3" asp-for="CreatedDate" />
+        <input class="form-control mb-3" asp-for="PublishDate" />
+        <input class="form-control mb-3" type="hidden" asp-for="ID" />
+        <input class="form-control mb-3" type="submit" value="Edit"/>
+    </div>
+</form>

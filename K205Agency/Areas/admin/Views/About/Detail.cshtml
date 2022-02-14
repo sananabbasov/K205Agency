@@ -1,0 +1,11 @@
+﻿@model About
+
+
+<p>@Model.Title</p>
+<p>@Model.Description</p>
+<p>
+    <img width="200" src="@Model.PhotoURL" />
+</p>
+
+
+<a class="btn btn-danger" href="/admin/about/delete/@Model.ID">Delete</a>
