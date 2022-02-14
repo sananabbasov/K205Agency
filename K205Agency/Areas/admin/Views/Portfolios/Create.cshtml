@@ -1,0 +1,26 @@
+﻿@model Portfolio
+
+
+<form method="post">
+    <div class="col-5">
+        <label asp-for="Name"></label>
+        <input class="form-control mb-2" asp-for="Name"/>
+        <label asp-for="Description"></label>
+        <input class="form-control mb-2" asp-for="Description"/>
+        <label asp-for="Client"></label>
+        <input class="form-control mb-2" asp-for="Client"/>
+        <label asp-for="PhotoURL"></label>
+        <input class="form-control mb-2" asp-for="PhotoURL"/>
+        <label asp-for="CategoryID"></label>
+        @*<input class="form-control mb-2" asp-for="CategoryID"/>*@
+        <select asp-for="CategoryID" class="form-control mb-2" >
+            @foreach (var cat in ViewBag.Category)
+            {
+                <option value="@cat.ID">@cat.CategoryName</option>
+            }
+        </select>
+        <label asp-for="CreatedDate"></label>
+        <input class="form-control mb-2" asp-for="CreatedDate"/>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </div>
+</form>

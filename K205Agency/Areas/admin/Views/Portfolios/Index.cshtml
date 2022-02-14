@@ -6,7 +6,7 @@
 <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><a href="/admin/portfolios/create">Create</a></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -16,7 +16,7 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Photo</th> 
-                                            <th>Category</th>
+                                            
                                             <th> </th>
                                         </tr>
                                     </thead>
@@ -25,7 +25,7 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Photo</th>
-                                            <th>Category</th>
+                                           
                                             <th> </th>
                                         </tr>
                                     </tfoot>
@@ -37,10 +37,11 @@
                                                 <td>@item.Description</td>
                                                 <td>
                                                     <img width="100" src="@item.PhotoURL" />
-                                                </td>
-                                                <td>@item.Category.CategoryName</td>
+                                                </td>       
+                                                
                                                 <td>
-
+                                                    <a href="/admin/portfolios/detail/@item.ID" class="btn btn-warning">Detail</a>
+                                                    <a href="/admin/portfolios/edit/@item.ID" class="btn btn-warning">Edit</a>
                                                 </td>
                                             </tr>
                                         }

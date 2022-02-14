@@ -5,9 +5,9 @@ namespace K205Agency.Data
 {
     public class AgencyDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AgencyDbContext(DbContextOptions<AgencyDbContext> options)
+            : base(options)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=AgencyDB;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
 
         public DbSet<Masthead> Mastheads { get; set; }

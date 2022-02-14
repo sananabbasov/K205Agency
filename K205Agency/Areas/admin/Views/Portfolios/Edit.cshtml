@@ -1,0 +1,16 @@
+﻿@model Portfolio
+
+
+<form method="post">
+    <div class="col-5">
+        
+        <input class="form-control mb-2" asp-for="Name"/>
+        <input class="form-control mb-2" asp-for="Description"/>
+        <input class="form-control mb-2" asp-for="Client"/>
+        <input class="form-control mb-2" asp-for="PhotoURL"/>
+        <input class="form-control mb-2" asp-for="CategoryID"/>
+        <input class="form-control mb-2" asp-for="CreatedDate"/>
+         <input type="hidden" asp-for="ID" />
+        <input class="btn btn-warning" type="submit" value="Edit" />
+    </div>
+</form>
