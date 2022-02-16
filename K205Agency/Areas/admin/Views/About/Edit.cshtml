@@ -1,11 +1,13 @@
 ﻿@model About
 
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="col-5">
         <input class="form-control mb-3" asp-for="Title" />
         <input class="form-control mb-3" asp-for="Description" />
-        <input class="form-control mb-3" asp-for="PhotoURL" />
+        <input class="form-control mb-3" name="Image" type="file" asp-for="PhotoURL" />
+        <img class="img-fluid mb-3" src="@Model.PhotoURL" />
+        <input type="hidden" name="OldPhoto" value="@Model.PhotoURL" />
         <input class="form-control mb-3" asp-for="CreatedDate" />
         <input class="form-control mb-3" asp-for="PublishDate" />
         <input class="form-control mb-3" type="hidden" asp-for="ID" />

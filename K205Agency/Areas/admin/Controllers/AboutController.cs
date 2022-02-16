@@ -34,9 +34,23 @@ namespace K205Agency.Areas.admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(About about)
+        public async Task<IActionResult> Edit(About about, IFormFile Image, string OldPhoto)
         {
+            if (Image != null)
+            {
+                string path = "/files/" + Guid.NewGuid() + Image.FileName;
+                using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+                {
+                    await Image.CopyToAsync(fileStream);
+                }
+                about.PhotoURL = path;
+            }
+            else
+            {
+                about.PhotoURL = OldPhoto;
+            }
 
+            
             try
             {
                 _context.Update(about);
