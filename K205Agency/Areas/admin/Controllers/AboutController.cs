@@ -76,19 +76,19 @@ namespace K205Agency.Areas.admin.Controllers
         {
             return View();
         }
+        
+        // wwroot/files/adjashjhaksdjasekiladi.png
 
         [HttpPost]
         public async Task<IActionResult> Create(About about,IFormFile Image)
         {
-            var path = Path.Combine(_environment.WebRootPath, "files");
-            var photo = Image.FileName;
-            using (var fs = new FileStream(Path.Combine(path, photo),
-                FileMode.Create))
+            string path = "/files/" + Guid.NewGuid() + Image.FileName;
+            using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
             {
-                fs.CopyToAsync(fs);
+                await Image.CopyToAsync(fileStream);
             }
-             about.CreatedDate = DateTime.Now;
-            about.PhotoURL = photo;
+            about.CreatedDate = DateTime.Now;
+            about.PhotoURL = path;
             _context.Abouts.Add(about);
             _context.SaveChanges();
 
